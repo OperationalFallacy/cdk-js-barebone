@@ -13,13 +13,15 @@ This project is a basic example of the AWS Cloud Development Kit (CDK) with Java
 - `min-cdk.js`: The entry point of the CDK application, which defines the Cloudformaiton stack and resources.
 - `cdk.json`: Configuration file for the CDK CLI. This is an entry point for the CDK application.
 
-## Useful Commands
+## Native Node commands for CDK stacks
 
-- `cdk list`: List the stacks in the app.
-- `npm install`: Install the project dependencies.
-- `cdk synth`: Synthesize the CloudFormation template.
-- `cdk deploy`: Deploy the stack to your default AWS account/region.
-- `cdk diff`: Compare the deployed stack with the current state.
+- `node listStacks.js`: Lists the stacks in the app (equivalent of `cdk list`).
+- `node synthStacks.js`: Synthesizes Cloudformation template for the application (equivalent of `cdk synth`).
+
+## CDK CLI commands with extensive logic
+
+- `cdk deploy`: Deploys stacks defined in the app.
+- `cdk diff`: Compares the deployed Cloudformation stack with the current state.
 
 ## Getting Started
 

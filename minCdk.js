@@ -4,6 +4,7 @@
 import { App, Stack, Duration } from 'aws-cdk-lib';
 import { Queue } from 'aws-cdk-lib/aws-sqs';
 import { Construct } from 'constructs';
+
 // Define a new construct class
 class MinCdkConstruct extends Construct {
   /**
@@ -40,4 +41,5 @@ new MinCdkStack(app, "MinCdkStack", {
   // env: { account: '123456789012', region: 'us-east-1' },
 });
 
-export { MinCdkStack };
+// Export the app instance for reuse
+export { app, MinCdkStack };
