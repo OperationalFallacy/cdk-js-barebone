@@ -1,20 +1,22 @@
 {
-  "name": "min-cdk",
-  "version": "0.1.0",
-  "bin": {
-    "min-cdk": "bin/min-cdk.js"
-  },
+  "name": "cdk-project",
+  "version": "1.0.0",
+  "description": "A basic AWS CDK project",
+  "main": "min-cdk.js",
+  "type": "module",
   "scripts": {
-    "build": "echo \"The build step is not required when using JavaScript!\" && exit 0",
-    "cdk": "cdk",
+    "build": "echo 'No build step required'",
+    "deploy": "cdk deploy",
+    "synth": "cdk synth",
     "test": "jest"
   },
-  "devDependencies": {
-    "aws-cdk": "2.66.0",
-    "jest": "^29.4.2"
-  },
   "dependencies": {
-    "aws-cdk-lib": "2.66.0",
+    "aws-cdk-lib": "^2.0.0",
     "constructs": "^10.0.0"
-  }
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  },
+  "author": "",
+  "license": "ISC"
 }
