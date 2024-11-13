@@ -11,7 +11,6 @@ import { app } from './minCdk.js';
 // Synthesize the app to get the stacks
 const assembly = app.synth();
 
-// List the stack names
 console.log('CDK stacks:');
 assembly.stacks.forEach(stack => {
     console.log(`- ${stack.stackName}`);
