@@ -1,29 +1,26 @@
 #!/usr/bin/env node
 
-// Import necessary CDK modules using ES6 import syntax
 import { App, Stack, Duration } from 'aws-cdk-lib';
 import { Queue } from 'aws-cdk-lib/aws-sqs';
 import { Construct } from 'constructs';
 
-// Define a new construct class
+// Define a new construct, a building block where we create AWS resources.
 class MinCdkConstruct extends Construct {
   /**
-   * Initialize a new construct
+   * Construct properties
    * @param {Construct} scope - The scope in which this construct is defined
-   * @param {string} id - The scoped construct ID
+   * @param {string} id - Construct ID
    * @param {StackProps=} props - Construct properties
    */
   constructor(scope, id, props) {
     super(scope, id, props);
 
-    // Define an SQS queue resource
-    const queue = new Queue(this, "MinCdkQueue", {
-      visibilityTimeout: Duration.seconds(300),
-    });
+    const queue = new Queue(this, "MinCdkQueue", {});
   }
 }
 
-// Define a stack that uses the construct
+// Create a new stack - Cloudformation.
+// It will contain resources defined in the Construct
 class MinCdkStack extends Stack {
   constructor(scope, id, props) {
     super(scope, id, props);
@@ -32,14 +29,14 @@ class MinCdkStack extends Stack {
   }
 }
 
-// Initialize the CDK app
+// Initialize the "root" Construct.
+// It will represents whole CDK application as a container with all resources
 const app = new App();
 
-// Instantiate the stack
+// Create MinCdkStack instance to load defined AWS resources into the CDK app
 new MinCdkStack(app, "MinCdkStack", {
-  // Uncomment and configure the environment for deployment
   // env: { account: '123456789012', region: 'us-east-1' },
 });
 
-// Export the app instance for reuse
+// Export the app instance and stack to reuse in the scripts
 export { app, MinCdkStack };
